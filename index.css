@@ -1,0 +1,54 @@
+body {
+  font-family: "Inter";
+}
+
+.header {
+  background-color: #5e17eb;
+  color: white;
+  text-align: center;
+}
+
+.header p {
+  padding: 10px;
+  font-weight: bold;
+}
+
+.logo h1 {
+  font-size: 50px;
+  color: #5e17eb;
+}
+
+.brand {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+}
+
+.contact p {
+  font-size: 20px;
+  font-weight: 300;
+  text-decoration: underline;
+  color: #5e17eb;
+}
+
+.banner {
+  margin: 50px 0;
+  display: flex;
+  background-color: #5e17eb;
+}
+
+.bannerBody {
+  color: white;
+}
+
+.img-fluid {
+  width: 600px;
+}
+
+
