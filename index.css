@@ -1,5 +1,5 @@
 body {
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
 }
 
 .header {
@@ -11,44 +11,64 @@ body {
 .header p {
   padding: 10px;
   font-weight: bold;
-}
-
-.logo h1 {
-  font-size: 50px;
-  color: #5e17eb;
+  font-size: clamp(5px, 3vw, 15px);
 }
 
 .brand {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.contact {
-  display: flex;
   justify-content: center;
+  align-items: center;
+  margin: 30px;
+
 }
 
-.contact p {
-  font-size: 20px;
-  font-weight: 300;
-  text-decoration: underline;
+.brand h1 {
+  font-size: 50px;
   color: #5e17eb;
+  font-size: clamp(40px, 5vw, 70px);
 }
 
 .banner {
-  margin: 50px 0;
   display: flex;
+  flex-wrap: wrap;
   background-color: #5e17eb;
 }
 
 .bannerBody {
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
 }
 
-.img-fluid {
-  width: 600px;
+.bannerBody h2 {
+  font-size: clamp(40px, 5vw, 90px);
 }
+
+.adoptBtn {
+  background-color: white;
+  padding: 10px 30px;
+  border: none;
+  font-weight: bold;
+  transition: all 200ms ease-in-out;
+}
+
+.adoptBtn:hover {  
+  background-color: #e3e1e9;
+  color: white;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0 !important;
+}
+
+
+
+
 
 
