@@ -19,7 +19,6 @@ body {
   justify-content: center;
   align-items: center;
   margin: 30px;
-
 }
 
 .brand h1 {
@@ -40,35 +39,65 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   padding: 30px;
 }
 
 .bannerBody h2 {
-  font-size: clamp(40px, 5vw, 90px);
+  font-size: clamp(25px, 5vw, 90px);
+  font-weight: bold;
+}
+
+.bannerBody p {
+  font-size: clamp(10px, 5vw, 30px);
 }
 
 .adoptBtn {
   background-color: white;
-  padding: 10px 30px;
+  padding: 15px 30px;
   border: none;
   font-weight: bold;
   transition: all 200ms ease-in-out;
 }
 
-.adoptBtn:hover {  
+.adoptBtn:hover {
   background-color: #e3e1e9;
   color: white;
 }
 
-.container-fluid {
-  margin: 0;
-  padding: 0 !important;
+.favoriteBreedsCategory {
+  text-align: center;
+  margin-top: 50px;
 }
 
+.favoriteBreedsCategory h2 {
+  font-size: clamp(30px, 5vw, 60px);
+  font-weight: 500;
+  margin-bottom: 0;
+}
 
+.favoriteBreedsCategory p {
+  font-size: clamp(10px, 5vw, 25px);
+}
 
+.favoriteBreeds {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 60px;
+}
 
+.breedDiv {
+  margin: 0 20px;
+}
 
+.breedDiv h4 {
+  color: #5e17eb;
+  font-weight: bold;
+  margin-top: 20px;
+}
 
+.favoriteBreeds img {
+  width: 300px;
+  border-radius: 8px;
+}
