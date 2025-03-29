@@ -124,16 +124,102 @@ body {
   flex-direction: column;
   justify-content: start;
   padding: 30px;
-  
 }
 
 .spotlightIntro h2 {
   font-size: clamp(30px, 5vw, 90px);
   margin-top: 30px;
+  font-weight: bold;
 }
 
 .spotlightIntro p {
   font-size: clamp(20px, 5vw, 10px);
   width: 70%;
   margin: 0 auto;
+}
+.availablePetsContainer {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.availablePetsContainer h2 {
+  font-size: clamp(20px, 5vw, 50px);
+  font-weight: bold;
+}
+
+.availablePetsContainer a {
+  font-size: clamp(20px, 5vw, 20px);
+
+  text-decoration: none;
+  color: #5e17eb;
+  font-weight: bold;
+}
+
+.availablePets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.availablePet img {
+  width: 400px;
+  padding: 20px;
+  border-radius: 10%;
+}
+
+.adoptInfoContainer {
+  text-align: center;
+  margin: 160px 0;
+}
+
+.adoptInfoContainer h2 {
+  font-weight: bold;
+  font-size: clamp(20px, 5vw, 50px);
+}
+
+.adoptInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.faq h5 {
+  margin-top: 25px;
+  color: #5e17eb;
+}
+
+.checkList h5 {
+  color: #5e17eb;
+}
+
+footer {
+  background-color: #5e17eb;
+  text-align: center;
+  color: white;
+}
+
+footer p {
+  margin-bottom: 0;
+}
+.footerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-top: 50px;
+  padding-bottom: 80px;
+  color: white;
+}
+
+.contact,
+.api {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.contact a,
+.api a {
+  text-decoration: none;
+  color: white;
 }

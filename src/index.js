@@ -2,6 +2,7 @@ let bannerImg = document.querySelector(".bannerImg");
 let imagesAll = document.querySelector(".imagesAll");
 const favoriteBreeds = document.querySelector(".favoriteBreeds");
 const spotlight = document.querySelector(".spotlight");
+const availablePets = document.querySelector(".availablePets");
 
 async function initialLoad() {
   const response = await axios.get("https://registry.dog/api/v1");
@@ -62,28 +63,55 @@ async function createSpotlight() {
 
   breeds.forEach((data) => {
     if (data.id === "maltipoo") {
+      const spotlightImg = document.createElement("div");
+      spotlightImg.classList.add("spotlightImg");
       const img = document.createElement("img");
-      img.classList.add("img-fluid");
       img.setAttribute("src", data.images.small.indoors);
+      img.classList.add("img-fluid");
+      spotlightImg.append(img);
+      spotlight.append(spotlightImg);
       const spotlightIntro = document.createElement("div");
       spotlightIntro.classList.add("spotlightIntro");
+      spotlight.append(spotlightIntro);
       const spotlightHeader = document.createElement("h2");
-      spotlightHeader.textContent = `Meet Spark`;
-      const spotlightDescr = document.createElement("p");
-      spotlightDescr.textContent = `${data.general.shortDescription}`;
+      spotlightHeader.innerHTML = `Meet Spark`;
+      spotlightIntro.append(spotlightHeader);
+      const spotlightDesc = document.createElement("p");
+      spotlightDesc.innerHTML = `${data.general.shortDescription}`;
+      spotlightIntro.append(spotlightDesc);
       const adoptBtn = document.createElement("button");
-      adoptBtn.classList.add("adoptBtn");
-      const text = document.createTextNode("Adopt Now");
-      adoptBtn.appendChild(text);
-      spotlight.appendChild(img);
-      spotlight.appendChild(spotlightIntro);
-      spotlightIntro.appendChild(spotlightHeader);
-      spotlightIntro.appendChild(spotlightDescr);
-      spotlightIntro.appendChild(adoptBtn);
+      const text = document.createTextNode("Adopt Now")
+      adoptBtn.append(text)
+      adoptBtn.classList.add("adoptBtn")
+      spotlightIntro.append(adoptBtn)
     }
   });
+}
+
+async function createAvailablePets () {
+  const response = await axios.get("https://registry.dog/api/v1");
+  let breeds = response.data.data;
+
+  breeds.forEach((data) => { 
+    if (
+      data.id === "siberian-husky" ||
+      data.id === "rottweiler" ||
+      data.id === "pembroke-welsh-corgi"
+    ) {
+      const availablePet = document.createElement("div");
+      availablePet.classList.add("availablePet")
+      availablePets.appendChild(availablePet)
+      const img = document.createElement("img");
+      img.setAttribute("src", data.images.small.indoors);
+      availablePet.append(img)
+    }
+    
+  });
+
 }
 
 createSpotlight();
 createBody();
 createBreeds();
+// initialLoad()
+createAvailablePets()
