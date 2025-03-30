@@ -30,9 +30,21 @@
     </div>
 
     <div class="search">
-        <form id="searchForm">
-            <input type="search" name="seach" id="search" placeholder="Search by breed" resquired>
-        </form>
+      <form id="searchForm">
+        <input
+          type="search"
+          name="seach"
+          id="searchInput"
+          placeholder="Search by breed"
+          autocomplete="off"
+          required
+        />
+        <input type="submit" value="Search" id="searchBtn" />
+
+        <ul id="suggestions">
+
+        </ul>
+      </form>
     </div>
 
     <div class="all"></div>

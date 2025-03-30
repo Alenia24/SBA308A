@@ -4,17 +4,6 @@ const favoriteBreeds = document.querySelector(".favoriteBreeds");
 const spotlight = document.querySelector(".spotlight");
 const availablePets = document.querySelector(".availablePets");
 
-async function initialLoad() {
-  const response = await axios.get("https://registry.dog/api/v1");
-  console.log(response.data.data);
-  let images = response.data.data;
-  images.forEach((data) => {
-    const img = document.createElement("img");
-    img.setAttribute("src", data.images.small.indoors);
-    imagesAll.appendChild(img);
-  });
-}
-
 async function createBody() {
   const response = await axios.get("https://registry.dog/api/v1");
   const img = document.createElement("img");
@@ -113,5 +102,4 @@ async function createAvailablePets() {
 // createSpotlight();
 // createBody();
 // createBreeds();
-// initialLoad()
 // createAvailablePets();
