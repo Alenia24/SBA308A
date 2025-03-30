@@ -1,0 +1,87 @@
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.header {
+  background-color: #5e17eb;
+  color: white;
+  text-align: center;
+}
+
+.header p {
+  padding: 10px;
+  font-weight: bold;
+  font-size: clamp(5px, 3vw, 15px);
+}
+
+.brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
+.brand a {
+  font-size: 50px;
+  color: #5e17eb;
+  font-size: clamp(40px, 5vw, 70px);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.search {
+  text-align: center;
+}
+
+input[type="search"] {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border-color: #5e17eb;
+}
+
+input[type="search"]:focus {
+    outline: none;
+}
+
+.all {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imgDiv {
+  margin: 30px;
+  background-color: #5e17eb;
+  text-align: center;
+  color: white;
+  padding-bottom: 20px;
+  width: 400px;
+  border-radius: 8px;
+}
+
+.imgDiv img {
+  border-radius: 8px 8px 0 0;
+}
+
+.imgDiv h5 {
+  font-size: clamp(20px, 5vw, 25px);
+  margin: 5px auto 20px;
+}
+
+.imgDiv p {
+  margin: 0;
+}
+
+.adoptBtn {
+  margin-top: 30px;
+  background-color: white;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  transition: all 200ms ease-in-out;
+}
+
+.adoptBtn:hover {
+  background-color: #e3e1e9;
+  color: white;
+}

@@ -80,38 +80,38 @@ async function createSpotlight() {
       spotlightDesc.innerHTML = `${data.general.shortDescription}`;
       spotlightIntro.append(spotlightDesc);
       const adoptBtn = document.createElement("button");
-      const text = document.createTextNode("Adopt Now")
-      adoptBtn.append(text)
-      adoptBtn.classList.add("adoptBtn")
-      spotlightIntro.append(adoptBtn)
+      const text = document.createTextNode("Adopt Now");
+      adoptBtn.append(text);
+      adoptBtn.classList.add("adoptBtn");
+      spotlightIntro.append(adoptBtn);
     }
   });
 }
 
-async function createAvailablePets () {
+async function createAvailablePets() {
   const response = await axios.get("https://registry.dog/api/v1");
   let breeds = response.data.data;
 
-  breeds.forEach((data) => { 
+  breeds.forEach((data) => {
     if (
       data.id === "siberian-husky" ||
       data.id === "rottweiler" ||
       data.id === "pembroke-welsh-corgi"
     ) {
       const availablePet = document.createElement("div");
-      availablePet.classList.add("availablePet")
-      availablePets.appendChild(availablePet)
+      availablePet.classList.add("availablePet");
+      availablePets.appendChild(availablePet);
       const img = document.createElement("img");
       img.setAttribute("src", data.images.small.indoors);
-      availablePet.append(img)
+      availablePet.append(img);
     }
-    
   });
-
 }
 
-createSpotlight();
-createBody();
-createBreeds();
+
+
+// createSpotlight();
+// createBody();
+// createBreeds();
 // initialLoad()
-createAvailablePets()
+// createAvailablePets();
