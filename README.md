@@ -2,7 +2,8 @@
 An application which allows users to view dogs that are up for adoption
 
 ## Features
-* **Search Database by Breed:** Users can search for a dog based on breed 
+* **Search Database by Breed:** Users can search for a dog based on breed
+* **Autocomplete:** User search input is autocompleted
 * **Responsive Design:** Application is mobile friendly
 
 ## Technologies Used
