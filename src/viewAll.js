@@ -1,3 +1,6 @@
+import { getApiResponse } from "./apiResponse.js";
+import { apiUrl } from "./index.js";
+
 const all = document.querySelector(".all");
 const searchForm = document.querySelector("#searchForm");
 
@@ -26,9 +29,8 @@ const randomnames = [
 ];
 
 async function initialLoad() {
-  const response = await axios.get("https://registry.dog/api/v1");
-  console.log(response.data.data);
-  let images = response.data.data;
+  const response = await getApiResponse(apiUrl);
+  const images = await response.data;
 
   images.forEach((data) => {
     let randomName =
@@ -39,15 +41,23 @@ async function initialLoad() {
     img.setAttribute("src", data.images.small.indoors);
     img.classList.add("img-fluid");
     imgDiv.append(img);
+
     const dogName = document.createElement("h5");
     dogName.innerHTML = `${randomName}`;
     imgDiv.append(dogName);
+
+    const dogBreed = document.createElement("p");
+    dogBreed.innerHTML = `<strong>Breed:</strong> ${data.general.name}`;
+    imgDiv.append(dogBreed);
+
     const childFriendly = document.createElement("p");
     childFriendly.innerHTML = `<strong>Child Friendly:</strong> ${data.behavior.childFriendly}`;
     imgDiv.append(childFriendly);
+
     const personality = document.createElement("p");
     personality.innerHTML = `<strong>Personality:</strong> ${data.general.personalityTraits}`;
     imgDiv.append(personality);
+
     const adoptBtn = document.createElement("button");
     const text = document.createTextNode("Adopt Now");
     adoptBtn.append(text);
@@ -62,17 +72,16 @@ const inputField = document.getElementById("searchInput");
 const suggestionsList = document.getElementById("suggestions");
 
 async function autocomplete() {
-  const response = await axios.get("https://registry.dog/api/v1");
-  let breeds = response.data.data;
+  const response = await getApiResponse(apiUrl);
+  const data = await response.data;
 
   const breedsArr = [];
-
-  breeds.forEach((data) => {
+  data.forEach((data) => {
     let breed = data.general.name;
     breedsArr.push(breed);
   });
 
-  const inputValue = this.value.toLowerCase();
+  const inputValue = inputField.value.toLowerCase();
 
   if (!inputValue) {
     suggestionsList.style.display = "none";
@@ -92,14 +101,11 @@ async function autocomplete() {
   });
 
   suggestionsList.style.display = "block";
-
-  function displaySelected() {}
 }
 
 inputField.addEventListener("input", autocomplete);
 
 document.addEventListener("click", function (event) {
-  event.preventDefault();
   if (
     event.target.tagName === "LI" &&
     event.target.parentNode === suggestionsList
@@ -107,7 +113,6 @@ document.addEventListener("click", function (event) {
     inputField.value = event.target.textContent;
     displaySelected(inputField.value);
     suggestionsList.style.display = "none";
-    inputField.value = ``;
   } else if (
     !inputField.contains(event.target) &&
     !suggestionsList.contains(event.target)
@@ -117,14 +122,13 @@ document.addEventListener("click", function (event) {
 });
 
 async function displaySelected(input) {
-  const response = await axios.get("https://registry.dog/api/v1");
-  let breeds = response.data.data;
-  
+  const response = await getApiResponse(apiUrl);
+  const images = await response.data;
 
-  breeds.forEach((data) => {
+  all.innerHTML = "";
+
+  images.forEach((data) => {
     if (data.general.name === input) {
-      all.innerHTML =``;
-      
       let randomName =
         randomnames[Math.floor(Math.random() * randomnames.length)];
       const imgDiv = document.createElement("div");
@@ -133,15 +137,19 @@ async function displaySelected(input) {
       img.setAttribute("src", data.images.small.indoors);
       img.classList.add("img-fluid");
       imgDiv.append(img);
+
       const dogName = document.createElement("h5");
       dogName.innerHTML = `${randomName}`;
       imgDiv.append(dogName);
+
       const childFriendly = document.createElement("p");
       childFriendly.innerHTML = `<strong>Child Friendly:</strong> ${data.behavior.childFriendly}`;
       imgDiv.append(childFriendly);
+
       const personality = document.createElement("p");
       personality.innerHTML = `<strong>Personality:</strong> ${data.general.personalityTraits}`;
       imgDiv.append(personality);
+
       const adoptBtn = document.createElement("button");
       const text = document.createTextNode("Adopt Now");
       adoptBtn.append(text);
@@ -154,4 +162,3 @@ async function displaySelected(input) {
 }
 
 initialLoad();
-displaySelected();
