@@ -27,11 +27,11 @@ An application which allows users to view dogs that are up for adoption
 
 # Similar Projects
 ### Weather App
-**You can view github repository:** [Weather App Github](https://github.com/Alenia24/Weather-App)
+**You can view github repository:** [Weather App Repository](https://github.com/Alenia24/Weather-App)
 **You can view a live demo of the application:** [Weather App](https://weatherforecastapppp.netlify.app/)
 
 ### World Clock
-**You can view github repository:** [World Github](https://github.com/Alenia24/world-clock-design)
+**You can view github repository:** [World Clock Repository](https://github.com/Alenia24/world-clock-design)
 **You can view a live demo of the application:** [World Clock](https://worldclockdesign.netlify.app/)
 
 
