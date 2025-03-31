@@ -31,8 +31,8 @@ An application which allows users to view dogs that are up for adoption
 **You can view a live demo of the application:** [Weather App](https://weatherforecastapppp.netlify.app/)
 
 ### World Clock
-**You can view github repository:** [World Github](https://github.com/Alenia24/world-clock)
-**You can view a live demo of the application:** [World Clock](worldclockprojectt.netlify.app/)
+**You can view github repository:** [World Github](https://github.com/Alenia24/world-clock-design)
+**You can view a live demo of the application:** [World Clock](https://worldclockdesign.netlify.app/)
 
 
    
