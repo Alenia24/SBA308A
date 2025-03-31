@@ -46,7 +46,7 @@ body {
 }
 
 .bannerBody h2 {
-  font-size: clamp(25px, 5vw, 90px);
+  font-size: clamp(25px, 5vw, 60px);
   font-weight: bold;
 }
 
