@@ -1,4 +1,4 @@
-### Pet Rescue Application
+# Pet Rescue Application
 An application which allows users to view dogs that are up for adoption
 
 ## Features
@@ -24,4 +24,15 @@ An application which allows users to view dogs that are up for adoption
 
 ## Demo
 **You can view a live demo of the application:** [Pet Rescue](https://rad-frangipane-97b1ca.netlify.app/)
+
+# Similar Projects
+### Weather App
+**You can view github repository:** [Weather App Github](https://github.com/Alenia24/Weather-App)
+**You can view a live demo of the application:** [Weather App](weatherforecastapppp.netlify.app/)
+
+### World Clock
+**You can view github repository:** [World Github](https://github.com/Alenia24/world-clock)
+**You can view a live demo of the application:** [World Clock](worldclockprojectt.netlify.app/)
+
+
    
